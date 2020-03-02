@@ -1,0 +1,71 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>class Binding</p>
+      <button class="btn btn-primary" [class.active]="isActive">Click</button>
+    </div>
+    <div class="col-md-4">
+      <p>Style Binding</p>
+      <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'blue' : 'grey'">Click</button>
+    </div>
+    <div class="col-md-4" (click)="onclickDiv()">
+      <p>Event Binding </p>
+      <button class="btn btn-success" (click)="consoleMsg($event)">Click</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <!-- string interpulation -->
+      <p>Using String Interpulation</p>
+      <img src="{{imgUrl}}"/>
+    </div>
+    <div class="col-md-4">
+        <!-- Property Binding -->
+        <p>Using Property Binding</p>
+        <img [src]="imgUrl"/>
+    </div>
+    <div class="col-md-4">
+      <p>Attribute Binding</p>
+      <table>
+        <tbody>
+          <tr>
+            <td [attr.colspan]="colSpan"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p>display using Service</p>
+    </div>
+    <div class="col-md-12">
+      <ul>
+        <li *ngFor="let emp of EmpList">
+          {{emp}}
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+
