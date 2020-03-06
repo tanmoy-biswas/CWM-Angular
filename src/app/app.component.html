@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container">
   <div class="row">
     <h1>{{title}}</h1>
@@ -35,12 +20,12 @@
     <div class="col-md-4">
       <!-- string interpulation -->
       <p>Using String Interpulation</p>
-      <img src="{{imgUrl}}"/>
+      <img src="{{imgUrl}}" />
     </div>
     <div class="col-md-4">
-        <!-- Property Binding -->
-        <p>Using Property Binding</p>
-        <img [src]="imgUrl"/>
+      <!-- Property Binding -->
+      <p>Using Property Binding</p>
+      <img [src]="imgUrl" />
     </div>
     <div class="col-md-4">
       <p>Attribute Binding</p>
@@ -64,8 +49,34 @@
         </li>
       </ul>
     </div>
-    
+
   </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>Event Filtering</p>
+      <input (keyup.enter)="onkeyUp($event)" />
+    </div>
+    <div class="col-md-4">
+      <p>using Template Veriable</p>
+      <input #email (keyup.enter)="onkeyUp1(email.value)" />
+    </div>
+    <div class="col-md-4">
+      <p>Two Way Data binding</p>
+      <!-- typical way -->
+      <input [value]="TwoWayDataBinding" (keyUp.enter)="TwoWayDataBinding=$event.target.value; sampleMethod()" />
+      <!-- using ng model -->
+      <input [(ngModel)]="TwoWayDataBindingngModel" (keyup.enter)="sampleMethod1()" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p>{{cource.title | uppercase | lowercase}}</p>
+      <p>{{cource.rating}}</p>
+      <p>{{cource.students}}</p>
+      <p>{{cource.price}}</p>
+      <p>{{cource.releaseDate}}</p>
+    </div>
+  </div>
+
+
 </div>
-
-
